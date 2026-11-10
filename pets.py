@@ -25,3 +25,17 @@ class Dog(Pet):
 class Cat(Pet):
   def speak(self):
     return "Meow."
+
+
+class Bird(Pet):
+  def __init__(self, name, age, can_fly=True):
+    super().__init__(name, age)
+    self.can_fly = can_fly
+    self.energy = 5
+    
+  def speak(self):
+    return "Tweet!"
+    
+  def describe(self):
+    flying = "can fly" if self.can_fly else "cannot fly"
+    return super().describe() + f" and {flying}."
